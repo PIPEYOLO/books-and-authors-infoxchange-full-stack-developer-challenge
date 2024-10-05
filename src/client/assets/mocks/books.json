@@ -1,0 +1,52 @@
+[
+  {
+    "_id": "book1",
+    "name": "The Great Adventure",
+    "isbn": "978-3-16-148410-0",
+    "author": {
+      "_id": "author1",
+      "first_name": "John",
+      "last_name": "Doe"
+    }
+  },
+  {
+    "_id": "book2",
+    "name": "Journey to the Unknown",
+    "isbn": "978-1-23-456789-0",
+    "author": {
+      "_id": "author2",
+      "first_name": "Jane",
+      "last_name": "Smith"
+    }
+  },
+  {
+    "_id": "book3",
+    "name": "Mastering TypeScript",
+    "isbn": "978-0-12-345678-9",
+    "author": {
+      "_id": "author3",
+      "first_name": "Michael",
+      "last_name": "Johnson"
+    }
+  },
+  {
+    "_id": "book4",
+    "name": "The Art of Programming",
+    "isbn": "978-9-87-654321-0",
+    "author": {
+      "_id": "author4",
+      "first_name": "Emily",
+      "last_name": "Williams"
+    }
+  },
+  {
+    "_id": "book5",
+    "name": "Understanding AI",
+    "isbn": "978-4-56-789123-0",
+    "author": {
+      "_id": "author5",
+      "first_name": "David",
+      "last_name": "Brown"
+    }
+  }
+]
