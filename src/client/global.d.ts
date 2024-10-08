@@ -1,7 +1,7 @@
 
 type AuthorCreationPayload = Omit<Author, "_id">
+type AuthorEditionPayload = AuthorCreationPayload;
 
 
-type BookCreationPayload = Omit<Book, "_id">
-
-
+type BookEditionPayload = Omit<Book, "_id" | "author">;
+type BookCreationPayload = BookEditionPayload & { author_id: string };

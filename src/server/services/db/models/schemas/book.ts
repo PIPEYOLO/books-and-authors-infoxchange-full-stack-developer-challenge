@@ -14,7 +14,8 @@ const BookSchema = new Schema({
   },
   author_id: {
     type: Schema.Types.ObjectId,
-    required: [ true, "author_id is required" ]
+    required: [ true, "author_id is required" ],
+    immutable: [ true, "author_id is immutable" ]
   }
 },
 {
@@ -22,7 +23,7 @@ const BookSchema = new Schema({
   toJSON: { virtuals: true },
   virtuals: {
     author: {
-      type: AuthorSchema,
+      type: Schema.Types.Subdocument,
       options: {
         ref: AUTHOR_MODEL_COLLECTION_NAME,
         foreignField: "_id",

@@ -1,11 +1,11 @@
-type Author = {
+interface Author {
   _id: string
   first_name: string
   last_name: string
 }
 
 
-type Book = {
+interface Book {
   _id: string
   name: string
   isbn: string
