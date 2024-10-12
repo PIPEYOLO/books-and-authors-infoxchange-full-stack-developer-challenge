@@ -1,21 +1,33 @@
-import { Schema } from "mongoose";
-import AuthorSchema from "./author.js";
-import { AUTHOR_MODEL_COLLECTION_NAME } from "../config.js";
-
-
+import { Schema } from 'mongoose'
+import { isValidISBN, validateBookName } from '../../../../../utils/validators.js'
+import { AUTHOR_MODEL_COLLECTION_NAME } from '../config.js'
+import { Author } from '../index.js'
 const BookSchema = new Schema({
   name: {
     type: String,
-    required: [ true, "name is required" ]
+    validate: validateBookName,
+    required: [true, 'name is required']
   },
   isbn: {
     type: String,
-    required: [ true, "isbn is required" ]
+    validate: function (v: string) {
+      if (!isValidISBN(v)) throw 'Unvalid ISBN'
+    },
+    required: [true, 'isbn is required']
   },
   author_id: {
     type: Schema.Types.ObjectId,
-    required: [ true, "author_id is required" ],
-    immutable: [ true, "author_id is immutable" ]
+    validate: {
+      validator: async function (v: any) {
+        try {
+          await Author.getAuthor(v)
+        } catch (error) {
+          throw (error as KnownErrorType).message as KnownErrorType['message']
+        }
+      }
+    },
+    required: [true, 'author_id is required'],
+    immutable: [true, 'author_id is immutable']
   }
 },
 {
@@ -26,8 +38,8 @@ const BookSchema = new Schema({
       type: Schema.Types.Subdocument,
       options: {
         ref: AUTHOR_MODEL_COLLECTION_NAME,
-        foreignField: "_id",
-        localField: "author_id",
+        foreignField: '_id',
+        localField: 'author_id',
         justOne: true
       }
     }
@@ -35,5 +47,4 @@ const BookSchema = new Schema({
 }
 )
 
-
-export default BookSchema;
+export default BookSchema

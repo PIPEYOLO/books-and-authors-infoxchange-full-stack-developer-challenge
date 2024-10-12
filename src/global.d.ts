@@ -4,7 +4,6 @@ interface Author {
   last_name: string
 }
 
-
 interface Book {
   _id: string
   name: string
@@ -12,11 +11,19 @@ interface Book {
   author: Author
 }
 
-
-
 interface ErrorType {
-  message: string;
-  status?: number;
-  data?: Object;
+  message: string
+  status?: number
+  data?: Object
   code?: string
+}
+
+type SkipOption = number
+type LimitOption = number
+type SearchOption = string
+
+interface QueryOptions {
+  skip?: SkipOption
+  limit?: LimitOption
+  search?: SearchOption
 }

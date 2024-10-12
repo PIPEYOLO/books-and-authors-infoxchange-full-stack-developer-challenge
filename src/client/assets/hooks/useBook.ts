@@ -1,24 +1,16 @@
-import { useCallback, useEffect, useState } from "react";
-import { getBook } from "../utils/fetch";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from 'react'
+import { getBook } from '../utils/fetch'
 
-
-export default function useBook(_id: string, { doInitialFetch }: { doInitialFetch: boolean } = { doInitialFetch: true }) {
-  const navigate = useNavigate();
-
-  const [ error, setError ] = useState<ErrorType | null>(null);
-  const [ book, setBook ] = useState<Book | null>(null);
+export default function useBook (_id: Book['_id'], { doInitialFetch }: { doInitialFetch: boolean } = { doInitialFetch: true }) {
+  const [error, setError] = useState<ErrorType | null>(null)
+  const [book, setBook] = useState<Book | null>(null)
 
   useEffect(() => {
-    if(doInitialFetch === false) return;
+    if (!doInitialFetch) return
     getBook(_id)
-    .then(response => setBook(response.data))
-    .catch(error => setError(error?.response?.data ?? { message: "Something went wrong" }));
-  }, [ _id ]);
+      .then(response => setBook(response.data))
+      .catch(error => setError(error?.response?.data ?? { message: 'Something went wrong' }))
+  }, [_id])
 
-  const goToResource = useCallback(() => {
-    navigate(`/book/${_id}`)
-  }, [ _id ]);
-
-  return { error, book, setBook, setError, goToResource};
+  return { error, book, setBook, setError }
 }

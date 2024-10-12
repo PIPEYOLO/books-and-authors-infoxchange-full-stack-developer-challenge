@@ -660,40 +660,20 @@ button:focus,
   left: 0px;
 }
 
+.left-3\/4 {
+  left: 75%;
+}
+
 .top-0 {
   top: 0px;
-}
-
-.top-full {
-  top: 100%;
-}
-
-.left-full {
-  left: 100%;
-}
-
-.left-80 {
-  left: 20rem;
-}
-
-.top-80 {
-  top: 20rem;
 }
 
 .top-3\/4 {
   top: 75%;
 }
 
-.left-3\/4 {
-  left: 75%;
-}
-
-.left-\[80\%\] {
-  left: 80%;
-}
-
-.top-\[80\%\] {
-  top: 80%;
+.top-full {
+  top: 100%;
 }
 
 .block {
@@ -712,6 +692,10 @@ button:focus,
   aspect-ratio: 1 / 1;
 }
 
+.h-1\/4 {
+  height: 25%;
+}
+
 .h-1\/6 {
   height: 16.666667%;
 }
@@ -724,44 +708,24 @@ button:focus,
   height: 4rem;
 }
 
-.h-full {
-  height: 100%;
-}
-
-.h-1\/5 {
-  height: 20%;
-}
-
-.h-1\/4 {
-  height: 25%;
-}
-
-.h-20 {
-  height: 5rem;
-}
-
-.h-\[80px\] {
-  height: 80px;
-}
-
 .h-\[70px\] {
   height: 70px;
 }
 
-.w-full {
-  width: 100%;
+.h-full {
+  height: 100%;
 }
 
-.w-1\/6 {
-  width: 16.666667%;
-}
-
-.w-1\/5 {
-  width: 20%;
+.max-h-\[200px\] {
+  max-height: 200px;
 }
 
 .w-1\/4 {
   width: 25%;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .flex-col {
@@ -784,12 +748,20 @@ button:focus,
   justify-content: center;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
 .gap-3 {
   gap: 0.75rem;
 }
 
 .gap-5 {
   gap: 1.25rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .overflow-y-auto {
@@ -819,20 +791,21 @@ button:focus,
   background-color: transparent;
 }
 
-.p-3 {
-  padding: 0.75rem;
+.p-1 {
+  padding: 0.25rem;
 }
 
 .p-2 {
   padding: 0.5rem;
 }
 
-.p-1 {
-  padding: 0.25rem;
+.p-3 {
+  padding: 0.75rem;
 }
 
-.p-0 {
-  padding: 0px;
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 .text-center {

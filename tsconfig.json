@@ -12,7 +12,7 @@
     "module": "NodeNext",
     "resolveJsonModule": true,
     "isolatedModules": true,
-
+    
     "rootDir": "./src",
     "outDir": "./dist",
     "noUnusedLocals": true,

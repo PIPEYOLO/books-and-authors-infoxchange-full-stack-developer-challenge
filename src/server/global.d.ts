@@ -1,6 +1,5 @@
 
-
 interface KnownErrorType extends ErrorType {
-  status: number,
+  status: number
   code: string
 }
